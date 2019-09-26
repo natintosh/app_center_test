@@ -41,16 +41,16 @@ android {
         applicationId "ng.bankly.appcenter_test_app"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode System.getenv('APPCENTER_BUILD_ID').toInteger()
+        versionCode 1
         versionName flutterVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
         release {
-//            storeFile rootProject.file("app/android.keystore")
-            storePassword System.getenv("APPCENTER_KEYSTORE_PASSWORD")
-            keyAlias System.getenv("APPCENTER_KEY_ALIAS")
-            keyPassword System.getenv("APPCENTER_KEY_PASSWORD")
+            storeFile rootProject.file("app/key.jks")
+            storePassword 'test1234'
+            keyAlias 'key'
+            keyPassword 'test1234'
         }
     }
     buildTypes {
