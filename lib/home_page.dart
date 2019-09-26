@@ -4,23 +4,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('App Center Test'),
-        centerTitle: true,
-      ),
-      floatingActionButton: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          FloatingActionButton(
-            onPressed: () {},
-            child: Icon(Icons.remove),
-          ),
-          FloatingActionButton(
-            onPressed: () {},
-            child: Icon(Icons.add),
-          ),
-        ],
-      ),
+      appBar: AppBar(title: Text('App Center Test')),
       body: _Content(),
     );
   }
@@ -36,11 +20,40 @@ class _ContentState extends State<_Content> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[Text('Total amount')],
+    return Scaffold(
+      floatingActionButton: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          FloatingActionButton(
+            onPressed: () {
+              setState(() {
+                --count;
+              });
+            },
+            child: Icon(Icons.remove),
+          ),
+          SizedBox(
+            height: 4,
+          ),
+          FloatingActionButton(
+            onPressed: () {
+              setState(() {
+                ++count;
+              });
+            },
+            child: Icon(Icons.add),
+          ),
+        ],
+      ),
+      body: Container(
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Text('Total count'),
+              Text('$count'),
+            ],
+          ),
         ),
       ),
     );
