@@ -1,5 +1,5 @@
 # appcenter_test_app
-
+[![Build Status](https://build.appcenter.ms/v0.1/apps/0690b33f-4e1c-4a18-a1aa-514ae17aa82c/branches/master/badgehttps://build.appcenter.ms/v0.1/apps/0690b33f-4e1c-4a18-a1aa-514ae17aa82c/branches/master/badge)
 A new Flutter application.
 
 ## Getting Started
