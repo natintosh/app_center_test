@@ -34,8 +34,18 @@ steps:
     cd ..
 
     git clone -b beta https://github.com/flutter/flutter.git
+    
     export PATH=`pwd`/flutter/bin:$PATH
+
+    echo "Installed flutter to `pwd`/flutter"
 
     flutter doctor
   
   displayName: 'install flutter sdk'
+
+- script: |
+    echo "Initializing APK Build"
+
+    flutter build apk --release
+    
+  displayName: 'Build apk'
