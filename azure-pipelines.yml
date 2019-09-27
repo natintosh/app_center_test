@@ -26,12 +26,15 @@ pool:
 
 steps:
 - script: |
+    ls
     cd .. 
+    ls
 
     set -e
     set -x
 
     cd ..
+    ls
 
     git clone -b beta https://github.com/flutter/flutter.git
     
@@ -41,6 +44,6 @@ steps:
 
     flutter doctor
     echo "Initializing APK Build"
-
+    ls
     flutter build apk --release
   displayName: 'install flutter sdk'
