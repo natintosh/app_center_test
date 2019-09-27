@@ -45,6 +45,8 @@ steps:
 
 - script: |
     echo "Initializing APK Build"
+    source $HOME/.bash_profile
+    source ~/.profile
 
     flutter build apk --release
     
