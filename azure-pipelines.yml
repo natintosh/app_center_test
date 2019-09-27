@@ -3,17 +3,53 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger:
-- master
+# trigger:
+# - master
+
+# pool:
+#   vmImage: 'ubuntu-latest'
+
+# steps:
+# - script: echo Hello, world!
+#   displayName: 'Run a one-line script'
+
+# - script: |
+#     echo Add other tasks to build, test, and deploy your project.
+#     echo See https://aka.ms/yaml
+#   displayName: 'Run a multi-line script'
+
 
 pool:
-  vmImage: 'ubuntu-latest'
-
+  name: Hosted VS2017
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- task: aloisdeniel.flutter.flutter-install.FlutterInstall@0
+  displayName: 'Flutter Install'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: carlowahlstedt.SecureFiles.SecureFiles.SecureFiles@1
+  displayName: KeyStore
+  inputs:
+    secureFileName: '000000-0000-0000-0000-000000000'
+
+- task: carlowahlstedt.SecureFiles.SecureFiles.SecureFiles@1
+  displayName: 'Environment Variables'
+  inputs:
+    secureFileName: '000000-0000-0000-0000-00000000000'
+    outputDirectory: '$(System.DefaultWorkingDirectory)/KhaozNet.CV.Flutter/'
+
+- task: aloisdeniel.flutter.flutter-build.FlutterBuild@0
+  displayName: 'Flutter Build apk'
+  inputs:
+    projectDirectory: KhaozNet.CV.Flutter
+    buildFlavour: release
+
+- task: CopyFiles@2
+  displayName: 'Copy ReleaseNotes'
+  inputs:
+    SourceFolder: KhaozNet.CV.Flutter
+    Contents: releasenotes.txt
+    TargetFolder: KhaozNet.CV.Flutter/build/app/outputs/apk/release/
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  inputs:
+    PathtoPublish: KhaozNet.CV.Flutter/build/app/outputs/apk/release/
