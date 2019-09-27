@@ -1,3 +1,6 @@
+import 'package:appcenter/appcenter.dart';
+import 'package:appcenter_analytics/appcenter_analytics.dart';
+import 'package:appcenter_crashes/appcenter_crashes.dart';
 import 'package:appcenter_test_app/home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
@@ -14,8 +17,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final isIos = defaultTargetPlatform == TargetPlatform.iOS;
 
-//    var appSecret = isIos ? '' : AndroidGUID;
-//    AppCenter.start(appSecret, [AppCenterCrashes.id, AppCenterAnalytics.id]);
+    var appSecret = isIos ? '' : AndroidGUID;
+    AppCenter.start(appSecret, [AppCenterCrashes.id, AppCenterAnalytics.id]);
 
     return MaterialApp(
       title: 'Flutter Demo',
