@@ -18,6 +18,8 @@
 #     echo See https://aka.ms/yaml
 #   displayName: 'Run a multi-line script'
 
+trigger:
+ - master
 
 pool:
   name: Hosted VS2017
