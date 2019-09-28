@@ -45,5 +45,5 @@ steps:
     flutter doctor
     echo "Initializing APK Build"
     ls
-    flutter build apk --release
+    flutter build apk --release -v
   displayName: 'install flutter sdk'
