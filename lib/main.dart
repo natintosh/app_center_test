@@ -1,9 +1,4 @@
-import 'package:appcenter_analytics/appcenter_analytics.dart';
-import 'package:appcenter_crashes/appcenter_crashes.dart';
-import 'package:appcenter_flutter/appcenter_flutter.dart';
 import 'package:appcenter_test_app/home_page.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -15,11 +10,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final isIos = defaultTargetPlatform == TargetPlatform.iOS;
+//    final isIos = defaultTargetPlatform == TargetPlatform.iOS;
 
-    var appSecret = isIos ? '' : AndroidGUID;
-    AppcenterFlutter.start(
-        appSecret, [AppCenterCrashes.id, AppCenterAnalytics.id]);
+//    var appSecret = isIos ? '' : AndroidGUID;
+//    AppcenterFlutter.start(
+//        appSecret, [AppCenterCrashes.id, AppCenterAnalytics.id]);
 
     return MaterialApp(
       title: 'Flutter Demo',
