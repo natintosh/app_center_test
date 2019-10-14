@@ -8,8 +8,10 @@ echo "Initializing Flutter Build"
 
 echo "`pwd`"
 
-cd ..
-cd.. 
+cd..
+echo "`pwd`"
+cd..
+echo "`pwd`"
 
 set -e
 set -x
