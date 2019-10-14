@@ -14,7 +14,7 @@ cd ..
 cd ..
 
 ls
-export PATH=`pwd`/flutter/bin:$PATH
+#export PATH=`pwd`/flutter/bin:$PATH
 
 
 if [ "$APPCENTER_BRANCH" == "master" ]; then
