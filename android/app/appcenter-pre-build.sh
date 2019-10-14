@@ -5,16 +5,16 @@ if ["$APPCENTER_BRANCH" == "master"]; then
 fi
 
 echo "Initializing Flutter Build"
-source $HOME/.bash_profile
-source $HOME/.profile
-source .bashrc
+#source $HOME/.bash_profile
+#source $HOME/.profile
+#source .bashrc
 echo "`pwd`"
 
 cd ..
 cd ..
 
 ls
-#export PATH=`pwd`/flutter/bin:$PATH
+export PATH=`pwd`/flutter/bin:$PATH
 
 
 if [ "$APPCENTER_BRANCH" == "master" ]; then
