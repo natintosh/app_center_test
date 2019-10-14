@@ -9,15 +9,11 @@ echo "Initializing Flutter Build"
 echo "`pwd`"
 
 cd ..
-echo "`pwd`"
 cd ..
-echo "`pwd`"
 
-echo $APPCENTER_BRANCH
-echo $APPCENTER_SOURCE_DIRECTORY
-echo $APPCENTER_BUILD_ID
-echo $APPCENTER_OUTPUT_DIRECTORY
-echo $APPCENTER_OUTPUT_DIRECTORY
+ls
+git clone -b stable https://github.com/flutter/flutter.git
+
 
 if [ "$APPCENTER_BRANCH" == "master" ]; then
     echo "Master Branch"
