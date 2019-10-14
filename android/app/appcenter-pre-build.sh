@@ -14,7 +14,7 @@ cd ..
 cd ..
 
 ls
-git clone -b stable https://github.com/flutter/flutter.git
+export PATH=`pwd`/flutter/bin:$PATH
 
 
 if [ "$APPCENTER_BRANCH" == "master" ]; then
