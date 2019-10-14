@@ -5,7 +5,9 @@ if ["$APPCENTER_BRANCH" == "master"]; then
 fi
 
 echo "Initializing Flutter Build"
-
+source $HOME/.bash_profile
+source $HOME/.profile
+source .bashrc
 echo "`pwd`"
 
 cd ..
