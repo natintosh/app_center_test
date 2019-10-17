@@ -24,7 +24,7 @@ fi
 set -e
 set -x
 
-flutter build apk --release --build-name=1.0.$APPCENTER_BUILD_ID --build_number=$APPCENTER_BUILD_ID -v
+flutter build apk --release --build-name=1.0.$APPCENTER_BUILD_ID --build-number=$APPCENTER_BUILD_ID -v
 
 echo "Build Complete"
 
